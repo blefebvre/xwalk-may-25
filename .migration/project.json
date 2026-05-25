@@ -3,5 +3,9 @@
   "libraryUrl": "https://main--sta-xwalk-boilerplate--aemysites.aem.page/tools/sidekick/library.json",
   "previewOrg": "blefebvre",
   "previewSite": "xwalk-may-25",
-  "contentHostUrl": "author-p141866-e1455422.adobeaemcloud.com"
+  "contentHostUrl": "author-p141866-e1455422.adobeaemcloud.com",
+  "aemSitePath": "/content/blefebvr-xwalk-may-25",
+  "aemAssetsFolderPath": "/content/dam/blefebvr-xwalk-may-25",
+  "aemSiteName": "blefebvr-xwalk-may-25",
+  "aemSiteTitle": "blefebvr xwalk-may-25"
 }

@@ -15,6 +15,8 @@ export default function decorate(block) {
     ul.append(li);
   });
   ul.querySelectorAll('picture > img').forEach((img) => {
+    // Skip optimization for external URLs and SVGs — they don't need resizing
+    if (img.src.startsWith('http') || img.src.endsWith('.svg')) return;
     const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
     moveInstrumentation(img, optimizedPic.querySelector('img'));
     img.closest('picture').replaceWith(optimizedPic);
