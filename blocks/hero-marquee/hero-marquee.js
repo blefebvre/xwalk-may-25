@@ -1,3 +1,3 @@
 export default function decorate() {
-  // CSS handles positioning of background image and text overlay
+  // No JS decoration needed — CSS handles background image positioning and text overlay
 }

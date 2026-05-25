@@ -1,33 +1,88 @@
+/* Block: columns-plans
+ * Displays plan card images in a horizontal row (3 columns on desktop).
+ * Sits in a .section.dark which provides the dark background.
+ * Extracted values from source: https://www.sling.com/programming/local-channels
+ */
+
+/* Section-level: center content */
+main .section.columns-plans-container {
+  text-align: center;
+}
+
+main .section.columns-plans-container h2 {
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+/* Block root */
+.columns-plans {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Row layout: flex container for plan cards */
 .columns-plans > div {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
+/* Individual card cells */
+.columns-plans > div > div {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* Paragraphs wrapping links (EDS wraps bare content in <p>) */
+.columns-plans p {
+  margin: 0;
+}
+
+/* Card links - block display, no decoration */
+.columns-plans a {
+  display: block;
+  text-decoration: none;
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Card images: fill container width */
 .columns-plans img {
   width: 100%;
-}
-
-.columns-plans > div > div {
-  order: 1;
-}
-
-.columns-plans > div > .columns-plans-img-col {
-  order: 0;
-}
-
-.columns-plans > div > .columns-plans-img-col img {
+  height: auto;
   display: block;
+  border-radius: 0;
 }
 
+/* Compare Plans link (below block, in section default content) */
+main .section.columns-plans-container > .default-content-wrapper {
+  margin-top: 16px;
+}
+
+main .section.columns-plans-container > .default-content-wrapper a:any-link {
+  color: rgb(0 120 173);
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main .section.columns-plans-container > .default-content-wrapper a:hover {
+  text-decoration: underline;
+}
+
+/* Desktop: 3 columns side by side, centered, no gap */
 @media (width >= 900px) {
   .columns-plans > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
   }
 
   .columns-plans > div > div {
-    flex: 1;
-    order: unset;
+    flex: 1 1 0;
+    max-width: 260px;
+    width: auto;
   }
 }

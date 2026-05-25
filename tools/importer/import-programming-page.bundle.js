@@ -200,17 +200,36 @@ var CustomImportScript = (() => {
   function parse6(element, { document }) {
     const ribbonContainer = element.querySelector('#available-on-device-ribbon, .available-on-device-ribbon--container, [class*="available-on-device-ribbon"]');
     const container = ribbonContainer || element;
-    const svgs = Array.from(container.querySelectorAll("svg"));
     const cells = [];
-    svgs.forEach((svg) => {
-      const titleEl = svg.querySelector("title");
-      const altText = titleEl ? titleEl.textContent.trim() : "device icon";
+    const svgs = Array.from(container.querySelectorAll("svg"));
+    const dataImgs = Array.from(container.querySelectorAll('img[src^="data:image/svg"]'));
+    const sources = svgs.length > 0 ? svgs : dataImgs;
+    sources.forEach((el) => {
+      let altText = "device icon";
+      let iconName = "device";
+      if (el.tagName === "svg") {
+        const titleEl = el.querySelector("title");
+        altText = titleEl ? titleEl.textContent.trim() : "device icon";
+      } else {
+        altText = el.getAttribute("alt") || "device icon";
+        try {
+          const src = el.getAttribute("src") || "";
+          const base64 = src.replace("data:image/svg+xml;base64,", "");
+          const svgText = atob(base64);
+          const titleMatch = svgText.match(/<title>([^<]+)<\/title>/);
+          if (titleMatch) altText = titleMatch[1];
+        } catch (e) {
+        }
+      }
+      iconName = altText.toLowerCase().replace(/\s+icon$/i, "").replace(/[^a-z0-9]+/g, "");
       const img = document.createElement("img");
+      img.setAttribute("src", "/icons/" + iconName + ".svg");
       img.setAttribute("alt", altText);
-      img.setAttribute("src", `/icons/${altText.toLowerCase().replace(/\s+icon$/i, "").replace(/\s+/g, "-")}.svg`);
+      const picture = document.createElement("picture");
+      picture.appendChild(img);
       const frag = document.createDocumentFragment();
       frag.appendChild(document.createComment(" field:image "));
-      frag.appendChild(img);
+      frag.appendChild(picture);
       cells.push([frag]);
     });
     const block = WebImporter.Blocks.createBlock(document, { name: "cards-devices", cells });

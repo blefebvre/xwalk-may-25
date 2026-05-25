@@ -1,27 +1,86 @@
+/* Block: cards-category -- category navigation icons on dark background */
+
+/* Extracted values from source: sling.com Trending section */
+
+/* Section bg: rgb(32, 34, 47) -- handled by .section.dark */
+
+/* Heading: 28.8px, 700, center, color #f5f5f6, margin 0 0 10px */
+
+/* Items: flex row, center-justified, 6 items, each ~125px wide */
+
+/* Images: 104x83px, no border-radius, object-fit contain */
+
+/* Link text: 16px, 400, color #f5f5f6, no decoration */
+
+/* Section-level heading centering (h2 is outside block, in default-content-wrapper) */
+.default-content-wrapper:has(+ .cards-category-wrapper) {
+  text-align: center;
+}
+
 .cards-category > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 0;
+  justify-items: center;
 }
 
 .cards-category > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
-}
-
-.cards-category .cards-category-card-body {
-  margin: 16px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  padding: 0;
 }
 
 .cards-category .cards-category-card-image {
   line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-category .cards-category-card-image picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cards-category > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  width: 104px;
+  height: 83px;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.cards-category .cards-category-card-body {
+  margin: 4px 0 0;
+}
+
+.cards-category .cards-category-card-body p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.cards-category .cards-category-card-body a:any-link {
+  color: #f5f5f6;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.cards-category .cards-category-card-body a:hover {
+  text-decoration: underline;
+  color: #f5f5f6;
+}
+
+@media (width >= 900px) {
+  .cards-category > ul {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+  }
 }

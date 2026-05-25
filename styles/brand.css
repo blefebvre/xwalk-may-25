@@ -1,0 +1,19 @@
+:root {
+  --heading-font-family: "proxima-nova", sans-serif;
+  --body-font-family: "proxima-nova", sans-serif;
+  --background-color: #fff;
+  --text-color: #333;
+  --link-color: #0091ff;
+  --link-hover-color: #006bbf;
+  --section-padding: 48px;
+  --nav-height: 60px;
+  --content-max-width: 1200px;
+  --heading-size-xxl: 32px;
+  --heading-size-xl: 28px;
+  --heading-size-l: 24px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+  --color-dark: #171725;
+  --color-light: #fff;
+}

@@ -1,58 +1,162 @@
+/* Block: tabs-faq
+ * Tabbed FAQ with accordion-style questions
+ * Designed for .section.dark context (white text on dark background)
+ */
+
+/* Tab navigation bar */
 .tabs-faq .tabs-faq-list {
   display: flex;
-  gap: 0.5ch;
-  max-width: 100%;
-  font-size: var(--body-font-size-xs);
+  justify-content: center;
+  gap: 8px;
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+  padding: 0;
+  margin: 0 0 32px;
   overflow-x: auto;
+  font-size: 14px;
 }
 
 @media (width >= 600px) {
   .tabs-faq .tabs-faq-list {
-    font-size: var(--body-font-size-s);
+    gap: 24px;
+    font-size: 16px;
   }
 }
 
 @media (width >= 900px) {
   .tabs-faq .tabs-faq-list {
-    font-size: var(--body-font-size-m);
+    gap: 32px;
+    font-size: 16px;
   }
 }
 
+/* Individual tab buttons */
 .tabs-faq .tabs-faq-list button {
   flex: 0 0 max-content;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: rgb(255 255 255 / 70%);
+  font-family: var(--body-font-family);
+  font-size: inherit;
+  font-weight: 600;
+  padding: 12px 4px;
   margin: 0;
-  border: 1px solid #dadada;
-  border-radius: 0;
-  padding: 0.5em;
-  background-color: var(--light-color);
-  color: initial;
-  font-weight: bold;
-  line-height: unset;
-  text-align: initial;
-  text-overflow: unset;
-  overflow: unset;
-  white-space: unset;
-  transition: background-color 0.2s;
+  cursor: pointer;
+  transition: color 0.2s, border-bottom-color 0.2s;
+  white-space: nowrap;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .tabs-faq .tabs-faq-list button p {
   margin: 0;
 }
 
-
-.tabs-faq .tabs-faq-list button[aria-selected='true'] {
-  border-bottom: 1px solid var(--background-color);
-  background-color: var(--background-color);
-  cursor: initial;
+.tabs-faq .tabs-faq-list button:hover {
+  color: #fff;
 }
 
+/* Active tab - blue underline */
+.tabs-faq .tabs-faq-list button[aria-selected='true'] {
+  color: #fff;
+  border-bottom-color: var(--link-color);
+  cursor: default;
+}
+
+/* Tab panels */
 .tabs-faq .tabs-faq-panel {
-  margin-top: -1px;
-  padding: 24px;
-  border: 1px solid #dadada;
-  overflow: auto;
+  padding: 0;
+  text-align: left;
 }
 
 .tabs-faq .tabs-faq-panel[aria-hidden='true'] {
   display: none;
+}
+
+/* Hide the h3 heading inside panels (tab title is redundant) */
+.tabs-faq .tabs-faq-panel > div > h3 {
+  display: none;
+}
+
+/* FAQ accordion items */
+.tabs-faq .tabs-faq-panel .faq-item {
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
+}
+
+.tabs-faq .tabs-faq-panel .faq-item:first-child {
+  border-top: 1px solid rgb(255 255 255 / 15%);
+}
+
+/* FAQ question (clickable header) */
+.tabs-faq .tabs-faq-panel .faq-question {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  cursor: pointer;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+}
+
+@media (width >= 900px) {
+  .tabs-faq .tabs-faq-panel .faq-question {
+    font-size: 18px;
+  }
+}
+
+/* Arrow indicator */
+.tabs-faq .tabs-faq-panel .faq-question::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  min-width: 12px;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-top: -4px;
+}
+
+.tabs-faq .tabs-faq-panel .faq-item.open .faq-question::before {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+
+/* FAQ answer (collapsible content) */
+.tabs-faq .tabs-faq-panel .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 0 0 28px;
+}
+
+.tabs-faq .tabs-faq-panel .faq-item.open .faq-answer {
+  max-height: 2000px;
+  padding: 0 0 18px 28px;
+}
+
+/* Answer paragraphs */
+.tabs-faq .tabs-faq-panel .faq-answer p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: rgb(245 245 246);
+}
+
+.tabs-faq .tabs-faq-panel .faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links inside FAQ answers */
+.tabs-faq .tabs-faq-panel .faq-answer a:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.tabs-faq .tabs-faq-panel .faq-answer a:hover {
+  color: var(--link-hover-color);
 }
