@@ -1,0 +1,30 @@
+{
+  "status": "success",
+  "url": "https://www.sling.com/programming/local-channels",
+  "path": "programming/local-channels",
+  "timestamp": "2026-05-25T19:02:14.397Z",
+  "title": "Watch Local Channels Online | Sling TV",
+  "template": "programming-page",
+  "blocks": [
+    "hero-marquee",
+    "columns-plans",
+    "columns-plans",
+    "columns-plans",
+    "columns-plans",
+    "columns-plans",
+    "columns-plans",
+    "columns-plans",
+    "columns-plans",
+    "columns-plans",
+    "form",
+    "cards-logos",
+    "cards-category",
+    "cards-category",
+    "cards-category",
+    "cards-category",
+    "cards-category",
+    "cards-category",
+    "cards-devices",
+    "tabs-faq"
+  ]
+}

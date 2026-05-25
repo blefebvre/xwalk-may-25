@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-category",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-25T18:25:31.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.sling.com/programming/local-channels",
+    "originPage": "local channels programming page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "category-navigation",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "circular images with text labels as links",
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "category navigation sections",
+      "visual menu links with circular thumbnails",
+      "trending/featured topic grids on dark backgrounds"
+    ],
+    "notSuitableFor": [
+      "detailed content cards with descriptions",
+      "product cards with pricing info",
+      "text-heavy card layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/programming/local-channels"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-25T18:25:31.000Z"
+  }
+}

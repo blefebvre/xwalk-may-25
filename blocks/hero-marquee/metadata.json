@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-marquee",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-25T18:25:31.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.sling.com/programming/local-channels",
+    "originPage": "local channels programming page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "marquee-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "background image + heading + subheading + 1 CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "landing pages with cinematic background images",
+      "promotional pages with single CTA",
+      "content pages with full-width hero banners"
+    ],
+    "notSuitableFor": [
+      "text-only heroes without background images",
+      "heroes with multiple CTAs or complex layouts",
+      "minimal blog post headers"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/programming/local-channels"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-25T18:25:31.000Z"
+  }
+}

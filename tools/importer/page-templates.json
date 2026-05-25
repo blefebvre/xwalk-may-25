@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "projectType": "xwalk"
+  },
+  "templates": [
+    {
+      "name": "programming-page",
+      "urls": ["https://www.sling.com/programming/local-channels"],
+      "description": "Programming category page showcasing local channel availability and options",
+      "blocks": [
+        {
+          "name": "hero-marquee",
+          "instances": [".marquee-template"]
+        },
+        {
+          "name": "columns-plans",
+          "instances": [".column-control.column-carousel .flex-row .flex-col-33"]
+        },
+        {
+          "name": "form",
+          "instances": [".zip-locals"]
+        },
+        {
+          "name": "cards-logos",
+          "instances": [".channel-shopper"]
+        },
+        {
+          "name": "cards-category",
+          "instances": ["#layout-container-v2-3c66b4a245 .column-control.column-carousel .flex-row .flex-col-16"]
+        },
+        {
+          "name": "cards-devices",
+          "instances": ["#supported-devices"]
+        },
+        {
+          "name": "tabs-faq",
+          "instances": [".tabbed-faq"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero / Marquee",
+          "selector": ".marquee-template",
+          "style": null,
+          "blocks": ["hero-marquee"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Plans for Locals Fans",
+          "selector": "#layout-container-v2-3c76ec8aa3",
+          "style": "dark",
+          "blocks": ["columns-plans"],
+          "defaultContent": ["#layout-container-v2-3c76ec8aa3 .rich-text h2"]
+        },
+        {
+          "id": "section-3",
+          "name": "ZIP Code Lookup and Channel Showcase",
+          "selector": "#layout-container-v2-00a09c6096",
+          "style": "dark",
+          "blocks": ["form", "cards-logos"],
+          "defaultContent": ["#layout-container-v2-00a09c6096 .rich-text h2", "#layout-container-v2-00a09c6096 .rich-text .paragraph-large"]
+        },
+        {
+          "id": "section-4",
+          "name": "Trending Categories",
+          "selector": "#layout-container-v2-3c66b4a245",
+          "style": "dark",
+          "blocks": ["cards-category"],
+          "defaultContent": ["#layout-container-v2-3c66b4a245 .rich-text h2"]
+        },
+        {
+          "id": "section-5",
+          "name": "Supported Devices",
+          "selector": "#supported-devices",
+          "style": null,
+          "blocks": ["cards-devices"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "FAQ",
+          "selector": ".tabbed-faq",
+          "style": null,
+          "blocks": ["tabs-faq"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Still Have Questions",
+          "selector": "#layout-container-v2-3c66b4a245 ~ .experiencefragment .layout-container-v2.primary-dark:last-of-type",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [".rich-text img[alt='Question icon']", ".rich-text h2"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-logos",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-25T18:25:31.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.sling.com/programming/local-channels",
+    "originPage": "local channels programming page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "logo-showcase",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "heading + row of logo images + link",
+    "buttonCount": 0,
+    "imageCount": 8
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "channel logo showcases",
+      "partner logo grids",
+      "brand logo collections on dark backgrounds"
+    ],
+    "notSuitableFor": [
+      "cards with text descriptions",
+      "product cards with pricing",
+      "content cards with headings and body text"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/programming/local-channels"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-25T18:25:31.000Z"
+  }
+}
